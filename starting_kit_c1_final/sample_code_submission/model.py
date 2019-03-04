@@ -12,6 +12,8 @@ from os.path import isfile
 from sklearn.base import BaseEstimator
 from sklearn import tree
 from sklearn.linear_model import LogisticRegression
+from sklearn.neural_network import MLPClassifier
+
 class model (BaseEstimator):
     def __init__(self):
         '''
@@ -22,7 +24,8 @@ class model (BaseEstimator):
         self.num_feat=1
         self.num_labels=1
         self.is_trained=False
-        self.model = clf = LogisticRegression(random_state=0, solver='lbfgs', multi_class='ovr')
+        self.model = clf = MLPClassifier(max_iter=100)
+        
     def fit(self, X, y):
         '''
         This function should train the model parameters.
