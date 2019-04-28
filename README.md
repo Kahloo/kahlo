@@ -10,4 +10,4 @@ Mohammed Lansari et Yanis Bouzid ont fait la partie Classification des deux vers
 
 Dylan Mills et Nathan Lespine on effectuer la partie visualisation (quelques bouts de code sur model.py et la majorité sur le jupyternotebook) avec l'aide de Mohammed et Yanis pour les affichages du CNN.
 
-La video à été effectué avec l'aide de Dylan, Nathan et Raphael Raimbaud tandis que le rapport et le diapo ont été fait par Mohammed, Raphael Cohen et Yanis.
+La video a été effectué avec l'aide de Dylan, Nathan et Raphael Raimbaud tandis que le rapport et le diapo ont été fait par Mohammed, Raphael Cohen et Yanis.
