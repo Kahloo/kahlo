@@ -1,4 +1,4 @@
-'''
+﻿'''
 Sample predictive model.
 You must supply at least 4 methods:
 - fit: trains the model.
@@ -24,9 +24,9 @@ import matplotlib.pyplot as plt
 ''' On définit un réseau de neuronne avec le module Keras composé de 4 couches dont la dernière qui retourne la classe prédite'''
 def ourNetwork():
     model = Sequential()
-    model.add(Dense(128, input_dim=800, kernel_initializer='uniform', activation='relu'))
+    model.add(Dense(128, input_dim=200, kernel_initializer='uniform', activation='relu'))
     model.add(Dense(16, kernel_initializer='uniform', activation='relu'))
-    model.add(Dense(8, kernel_initializer='uniform', activation='elu'))
+    model.add(Dense(2, kernel_initializer='uniform', activation='elu'))
     model.add(Dense(1, kernel_initializer='uniform', activation='sigmoid'))
     model.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
     return model
@@ -35,7 +35,7 @@ class model (BaseEstimator):
     ''' On initialise notre neuronne'''
     def __init__(self):
         self.model = ourNetwork()
-    
+
     ''' On effectue la phase d'apprentissage sur 15 époques. Cette méthode permet aussi de tracer
 	un courbe sur la valeur Accurancy et l'autre sur le Loss en fonction des époques'''
     def fit(self, X, y):
@@ -55,7 +55,7 @@ class model (BaseEstimator):
         plt.xlabel('Epoch')
         plt.legend(['Train', 'Test'], loc='upper left')
         plt.show()
-        
+
     ''' On effectue les prédictions avec des probabilités pour obtenir une courbe ROC plus juste'''
     def predict(self, X):
         y = self.model.predict_proba(X)

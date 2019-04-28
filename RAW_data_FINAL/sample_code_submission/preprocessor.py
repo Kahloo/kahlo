@@ -5,18 +5,18 @@ import cv2
 import sys
 
 class Preprocessor:
-    
+
     def __init__(self):
-        self.pca = IncrementalPCA(n_components = 400)
-        
+        self.pca = IncrementalPCA(n_components = 200)
+
     """
-    
+
     Standardize the data with the module sklearn.preprocessing.StandardScaler
-    
+
     Parameters
     ----------
     X (2D array): The data to standardize
-    
+
     Returns
     -------
     2D array: The data standardized
@@ -26,30 +26,30 @@ class Preprocessor:
         scaler = StandardScaler()
         new_X = np.asfarray(X, dtype='float')
         return scaler.fit_transform(new_X)
-    
-    
+
+
     """Apply the 'partial_fit' function of the module sklearn.decomposition.IncrementalPCA on the daya"""
     def partial_fit(self, X, y=None):
         return self.pca.partial_fit(X, y)
 
-    
+
     """
-    
+
     Transform the data with the module sklearn.decomposition.IncrementalPCA
-    
+
     Parameters
     ----------
     X (2D array): the data to transform
-    
+
     Returns
     -------
     2D array: the data transformed
-    
+
     """
     def transform(self, X, y=None):
         print("Transforming \n")
         X_shape = X.shape[0]
-        new_X = np.empty([X_shape, 400])
+        new_X = np.empty([X_shape, 200])
         i = 0
         transformed = False
         while (transformed == False):
